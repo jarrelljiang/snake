@@ -263,7 +263,7 @@
 			}
 		}
 	}
-    //控制方向（通过判断第一个div和第二个div的left或top是不是相等来控制移动的放向）
+    //控制方向（通过判断第一个div和第二个div的left或top是不是相等来控制移动的方向）
 	 if(isBegin==true){//非暂停的时候才执行下面的
 		switch(event.keyCode){
 		  case 38 ://上键
