@@ -3,6 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     minifycss=require('gulp-minify-css'),
     concat=require('gulp-concat'),
+    order = require("gulp-order"),
     htmlmin=require('gulp-htmlmin');
     
 gulp.task('default',function(){
@@ -18,9 +19,9 @@ gulp.task('minifycss',function(){
 })
 
 gulp.task('minifyjs',function(){
-    return gulp.src(['snake.js','snow.js'])
-        .pipe(concat('bundle.js'))
+    return gulp.src('js/*.js')
         .pipe(gulp.dest('dist/js'))
+        .pipe(rename({suffix:'.min'}))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 })
