@@ -1,31 +1,15 @@
 {
   "name": "snake",
   "version": "1.0.0",
-  "description": "just for fun",
-  "main": "bundle.js",
+  "description": "",
+  "main": "snake.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Astro00/snake.git"
+    "url": "git@git.coding.net:jiangjl/Demo.git"
   },
-  "author": "jarrelljiang",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Astro00/snake/issues"
-  },
-  "homepage": "https://github.com/Astro00/snake#readme",
-  "devDependencies": {
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-htmlmin": "^4.0.0",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-order": "^1.1.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^3.0.0"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1"
-  }
+  "author": "",
+  "license": "ISC"
 }

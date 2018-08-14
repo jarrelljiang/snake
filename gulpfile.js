@@ -1,43 +1,11 @@
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename'),
-    minifycss=require('gulp-minify-css'),
-    concat=require('gulp-concat'),
-    order = require("gulp-order"),
-    htmlmin=require('gulp-htmlmin');
-    
-gulp.task('default',function(){
-    gulp.start('minifycss','minifyjs','htmlmin')
+    rename = require('gulp-rename')
+
+//压缩css
+gulp.task('minifyjs', function () {
+    return gulp.src('*.js')    //需要操作的文件
+        .pipe(rename({ suffix: '.min' }))   //rename压缩后的文件名
+        .pipe(uglify())   //执行压缩
+        .pipe(gulp.dest('js'));   //输出文件夹
 });
-
-gulp.task('minifycss',function(){
-    return gulp.src('*.css')
-        .pipe(gulp.dest('dist/css'))
-        .pipe(rename({suffix:'.min'}))
-        .pipe(minifycss())
-        .pipe(gulp.dest('dist/css'));
-})
-
-gulp.task('minifyjs',function(){
-    return gulp.src('js/*.js')
-        .pipe(gulp.dest('dist/js'))
-        .pipe(rename({suffix:'.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
-})
-
-gulp.task('htmlmin',function(){
-    var options={
-        removeComments: true,//清除HTML注释
-        collapseWhitespace: true,//压缩HTML
-        removeScriptTypeAttributes: true,//删除<script>的type="text/javascript"
-        minifyJS: true,//压缩页面JS
-        minifyCSS: true//压缩页面CSS
-    }
-    gulp.src('*.html')
-        .pipe(htmlmin(options))
-        .pipe(gulp.dest('dist/html'));
-})
-
-
-   
